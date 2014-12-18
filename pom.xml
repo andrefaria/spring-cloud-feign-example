@@ -70,6 +70,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.netflix.archaius</groupId>
             <artifactId>archaius-core</artifactId>
             <version>0.6.3</version>
@@ -80,13 +85,6 @@
             <artifactId>guava</artifactId>
             <version>18.0</version>
         </dependency>
-
-
-        <!--<dependency>-->
-            <!--<groupId>com.squareup.dagger</groupId>-->
-            <!--<artifactId>dagger-compiler</artifactId>-->
-            <!--<version>1.2.2</version>-->
-        <!--</dependency>-->
 
     </dependencies>
 
