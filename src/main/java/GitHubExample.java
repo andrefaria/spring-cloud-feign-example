@@ -4,29 +4,50 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.cloud.netflix.feign.FeignClientScan;
 import org.springframework.cloud.netflix.feign.FeignConfiguration;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.inject.Named;
 import java.util.List;
 
 @Configuration
 @EnableAutoConfiguration
 @FeignClientScan
 @RestController
-public class GitHubExample extends FeignConfiguration{
+public class GitHubExample extends FeignConfiguration {
 
     static class Contributor {
-        String login;
-        int contributions;
+
+        private String login;
+        private int contributions;
+
+
+        public String getLogin() {
+            return login;
+        }
+
+        public void setLogin(String login) {
+            this.login = login;
+        }
+
+        public int getContributions() {
+            return contributions;
+        }
+
+        public void setContributions(int contributions) {
+            this.contributions = contributions;
+        }
+
     }
 
-    @FeignClient(value="https://api.github.com", loadbalance=false)
+    @FeignClient(value = "https://api.github.com", loadbalance = false)
     interface GitHub {
+
         @RequestMapping(method = RequestMethod.GET, value = "/repos/{owner}/{repo}/contributors")
         List<Contributor> contributors(@RequestParam("owner") String owner, @RequestParam("repo") String repo);
+
     }
 
     @Autowired
