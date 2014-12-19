@@ -1,4 +1,4 @@
-This is an example of how to use feign with Spring Cloud.
+This is an example of how to use AngularJS + Feign + Spring Cloud.
 
 This application goes to https://api.github.com and lists contributors of a repository.
 
