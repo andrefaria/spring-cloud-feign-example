@@ -1,3 +1,5 @@
+package example;
+
 public class Contributor {
 
     private String login;
