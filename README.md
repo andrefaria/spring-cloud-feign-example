@@ -1,4 +1,4 @@
-This is an example of how to use AngularJS + Feign + Spring Cloud.
+Test1 This is an example of how to use AngularJS + Feign + Spring Cloud.
 
 Main Point: It has never been easier to do REST in Java.
 
